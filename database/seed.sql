@@ -1,0 +1,121 @@
+-- Ayurvaidya Seed Data
+-- Sample data for development and testing
+
+-- ============================================
+-- SAMPLE PATIENTS
+-- ============================================
+INSERT INTO patients (id, full_name, age, gender, phone, district, state, prakriti) VALUES
+('pat_001', 'Ramesh Kumar', 45, 'M', '9876543210', 'Varanasi', 'Uttar Pradesh', 'PITTA'),
+('pat_002', 'Sunita Devi', 32, 'F', '9876543211', 'Patna', 'Bihar', 'VATA'),
+('pat_003', 'Amit Singh', 28, 'M', '9876543212', 'Jaipur', 'Rajasthan', 'KAPHA'),
+('pat_004', 'Lakshmi Pillai', 55, 'F', '9876543213', 'Kochi', 'Kerala', NULL),
+('pat_005', 'Mohammed Khan', 40, 'M', '9876543214', 'Lucknow', 'Uttar Pradesh', 'PITTA');
+
+-- ============================================
+-- SAMPLE CASE FILES
+-- ============================================
+INSERT INTO case_files (
+    id, patient_id, status, priority, 
+    chief_complaint, symptom_duration, raw_notes, 
+    vital_signs, created_at
+) VALUES
+(
+    'case_001', 'pat_001', 'PENDING_REVIEW', 'ROUTINE',
+    'Burning sensation in stomach after meals',
+    '5 days',
+    'Patient reports acidity, worse at night. No fever. Takes occasional antacids. Diet includes spicy food.',
+    '{"temperature": 98.4, "bloodPressure": "130/85", "pulseRate": 78, "weight": 72}',
+    datetime('now', '-2 hours')
+),
+(
+    'case_002', 'pat_002', 'PENDING_REVIEW', 'ELEVATED',
+    'Persistent headache and fatigue',
+    '1 week',
+    'Patient feels tired all day. Headache mostly in the morning. Sleep quality poor. Works long hours at computer.',
+    '{"temperature": 98.6, "bloodPressure": "110/70", "pulseRate": 82, "weight": 58}',
+    datetime('now', '-1 hour')
+),
+(
+    'case_003', 'pat_003', 'DRAFT', 'ROUTINE',
+    'Joint pain in knees',
+    '2 months',
+    'Gradual onset. Worse in cold weather. No swelling visible. Family history of arthritis.',
+    '{"temperature": 98.2, "bloodPressure": "120/80", "pulseRate": 70, "weight": 85}',
+    datetime('now', '-30 minutes')
+),
+(
+    'case_004', 'pat_004', 'PENDING_REVIEW', 'URGENT',
+    'Severe chest discomfort and shortness of breath',
+    '2 days',
+    'Patient is diabetic. Feels heaviness in chest. Breathlessness on climbing stairs. No radiating pain.',
+    '{"temperature": 98.8, "bloodPressure": "150/95", "pulseRate": 92, "weight": 68}',
+    datetime('now', '-15 minutes')
+),
+(
+    'case_005', 'pat_005', 'REVIEWED', 'ROUTINE',
+    'Recurring cold and cough',
+    '2 weeks',
+    'Seasonal pattern. Mild fever initially, now resolved. Productive cough. No blood in sputum.',
+    '{"temperature": 98.6, "bloodPressure": "125/82", "pulseRate": 76, "weight": 75}',
+    datetime('now', '-1 day')
+);
+
+-- ============================================
+-- SAMPLE RECOMMENDATION (for reviewed case)
+-- ============================================
+INSERT INTO recommendations (
+    id, case_file_id, ai_model_version, confidence_score,
+    allopathy, ayurveda, contraindications, red_flags,
+    estimated_cost_range, disclaimer
+) VALUES
+(
+    'rec_001', 'case_005', 'stub-v0.1', 75,
+    '{
+        "approach": "Symptomatic management with focus on immune support",
+        "suggestedActions": [
+            "Consider generic antihistamine if allergic component suspected",
+            "Steam inhalation 2-3 times daily",
+            "Adequate hydration (2-3L water daily)",
+            "Rest for 2-3 days if symptoms persist"
+        ],
+        "genericFirst": true,
+        "referralNeeded": false,
+        "referralReason": null
+    }',
+    '{
+        "constitutionalNote": "Pitta-Kapha imbalance suspected due to seasonal change",
+        "dietaryGuidance": [
+            "Warm water with honey and ginger in morning",
+            "Avoid cold drinks and dairy temporarily",
+            "Light, easily digestible meals",
+            "Include turmeric in cooking"
+        ],
+        "lifestyleGuidance": [
+            "Early to bed (before 10 PM)",
+            "Light morning sun exposure for 15 minutes",
+            "Avoid air conditioning"
+        ],
+        "herbSuggestions": [
+            "Tulsi (Holy Basil) tea",
+            "Mulethi (Licorice) if no hypertension",
+            "Giloy for immune support"
+        ],
+        "yogaRecommendations": [
+            "Pranayama: Anulom Vilom (5 minutes)",
+            "Bhastrika (if no breathing difficulty)"
+        ]
+    }',
+    '["Avoid Mulethi if patient has high blood pressure", "Giloy may affect blood sugar - monitor if diabetic"]',
+    '["Seek immediate care if fever returns above 101°F", "Consult urgently if blood in sputum", "Emergency visit if breathing becomes labored"]',
+    '{"min": 50, "max": 200, "currency": "INR"}',
+    "⚠️ GUIDANCE, NOT DIAGNOSIS\n\nThis information is generated to assist healthcare providers and does not constitute medical diagnosis, prescription, or treatment. All suggestions require validation by a qualified medical professional. The AI system provides decision support only — final clinical judgment rests with the treating physician.\n\nGenerated by Ayurvaidya CDSS v0.1 (Stage 1 - Stub Mode)"
+);
+
+-- Update the reviewed case with recommendation reference
+UPDATE case_files 
+SET recommendation_id = 'rec_001',
+    doctor_notes = 'Patient advised rest and hydration. Follow-up in 1 week if not improved.',
+    doctor_decision = 'Symptomatic treatment approved. No antibiotics needed at this stage.',
+    reviewed_at = datetime('now', '-12 hours'),
+    reviewed_by = 'Dr. Sample'
+WHERE id = 'case_005';
