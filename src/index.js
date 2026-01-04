@@ -63,9 +63,11 @@ const app = express();
 // CORS - allow all origins for development
 app.use(cors());
 
+import path from 'path';
+
 // Serve Static Frontend Files
-// Using absolute path to the hackathon directory
-const FRONTEND_PATH = 'd:/Nishchal/Coding Projects/Ayurvadiya/hackathon/hackathon';
+// Using relative path for portability
+const FRONTEND_PATH = path.join(process.cwd(), 'frontend');
 app.use(express.static(FRONTEND_PATH));
 
 // Parse JSON bodies
