@@ -8,6 +8,8 @@
 **Ayurvaidya is NOT an AI doctor.**  
 It is a simplified **Clinical Decision Support System (CDSS)** that bridges the gap between traditional wisdom (Ayurveda) and modern medical safety. We use AI to structure patient data and provide "Guidance, Not Diagnosis," enabling affordable, scalable, and responsible healthcare for India's next billion users.
 
+                                            Our goal is simple: bring clarity before care, not diagnosis.
+
 ---
 
 ## 🇮🇳 The Problem: Healthcare fails *before* the hospital
