@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Doctor Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-link notranslate">
+        <img src="logo.png" alt="Ayurvaidya Logo" class="logo-img">
+      </a>
+      <div>
+        <a href="doctors.html">Consultation</a>
+        <a href="remedies.html">Ayurveda</a>
+        <a href="#" class="btn outline" id="loginBtn">Login</a>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Content -->
+  <div class="container profile-container">
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="doctors.html">Doctors</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current" id="docBreadcrumbName">Dr. Ananya Sharma</span>
+    </nav>
+
+    <!-- Left Column - Doctor Info -->
+    <div class="profile-main">
+
+      <!-- Doctor Header Card -->
+      <div class="profile-card doctor-header-card">
+        <div class="doctor-profile-top">
+          <div class="profile-avatar">
+            <div class="avatar-large" id="docInitials">AS</div>
+            <span class="verified-badge">✓ Verified</span>
+          </div>
+          <div class="profile-info">
+            <h1 id="docName">Dr. Ananya Sharma</h1>
+            <span class="specialty-tag" id="docSpecialty">Cardiologist</span>
+            <div class="profile-meta">
+              <span id="docQual">🎓 MBBS, MD (Cardiology) - AIIMS Delhi</span>
+              <span id="docLoc">📍 Delhi, India</span>
+            </div>
+            <div class="profile-ratings">
+              <span class="rating-stars" id="docRating">⭐ 4.9</span>
+              <span class="rating-count" id="docReviews">(128 reviews)</span>
+              <span class="consult-count" id="docConsults">• 500+ consultations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-stats-row">
+          <div class="profile-stat">
+            <span class="stat-icon">🩺</span>
+            <div>
+              <span class="stat-number" id="docExp">12+</span>
+              <span class="stat-text">Years Experience</span>
+            </div>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-icon">👥</span>
+            <div>
+              <span class="stat-number" id="docPatients">500+</span>
+              <span class="stat-text">Happy Patients</span>
+            </div>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-icon">💬</span>
+            <div>
+              <span class="stat-number">98%</span>
+              <span class="stat-text">Response Rate</span>
+            </div>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-icon">⏱️</span>
+            <div>
+              <span class="stat-number">&lt;15 min</span>
+              <span class="stat-text">Avg. Response</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="profile-card">
+        <h2 class="section-title">About</h2>
+        <p class="about-text" id="docAbout">
+          Dr. Ananya Sharma is a highly experienced cardiologist specializing in preventive cardiology,
+          heart failure management, and interventional procedures. With over 12 years of clinical experience
+          at leading hospitals including AIIMS Delhi and Max Healthcare, she has helped thousands of patients
+          manage their cardiovascular health effectively.
+        </p>
+        <p class="about-text">
+          She is known for her patient-centric approach, taking time to explain conditions thoroughly
+          and creating personalized treatment plans that combine modern medicine with lifestyle modifications.
+        </p>
+
+        <div class="expertise-tags">
+          <span class="expertise-tag">Heart Disease</span>
+          <span class="expertise-tag">Hypertension</span>
+          <span class="expertise-tag">Cholesterol</span>
+          <span class="expertise-tag">ECG Analysis</span>
+          <span class="expertise-tag">Preventive Care</span>
+          <span class="expertise-tag">Cardiac Rehab</span>
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="profile-card">
+        <h2 class="section-title">Patient Reviews</h2>
+
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer-avatar">RK</div>
+            <div class="reviewer-info">
+              <span class="reviewer-name">Rahul Kumar</span>
+              <span class="review-date">2 weeks ago</span>
+            </div>
+            <span class="review-rating">⭐ 5.0</span>
+          </div>
+          <p class="review-text">
+            "Excellent doctor! Very thorough in her examination and took time to explain everything.
+            My heart condition is now well managed thanks to her guidance."
+          </p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer-avatar">PM</div>
+            <div class="reviewer-info">
+              <span class="reviewer-name">Priya Mehta</span>
+              <span class="review-date">1 month ago</span>
+            </div>
+            <span class="review-rating">⭐ 4.8</span>
+          </div>
+          <p class="review-text">
+            "Very professional and caring. She answered all my questions patiently and suggested
+            lifestyle changes that really helped. Highly recommend!"
+          </p>
+        </div>
+
+        <button class="btn-secondary">View All 128 Reviews</button>
+      </div>
+    </div>
+
+    <!-- Right Column - Booking -->
+    <div class="profile-sidebar">
+
+      <!-- Booking Card -->
+      <div class="booking-card">
+        <div class="booking-header">
+          <h3>Book Appointment</h3>
+          <div class="consultation-fee">
+            <span class="fee-amount" id="docPrice">₹500</span>
+            <span class="fee-label">per session</span>
+          </div>
+        </div>
+
+        <div class="booking-section">
+          <h4>Select Date</h4>
+          <div class="date-picker">
+            <button class="date-btn">Today<br><span>3 Jan</span></button>
+            <button class="date-btn active">Tomorrow<br><span>4 Jan</span></button>
+            <button class="date-btn">Sun<br><span>5 Jan</span></button>
+            <button class="date-btn">Mon<br><span>6 Jan</span></button>
+          </div>
+        </div>
+
+        <div class="booking-section">
+          <h4>Available Slots</h4>
+          <div class="time-slots">
+            <button class="time-slot">10:00 AM</button>
+            <button class="time-slot active">10:30 AM</button>
+            <button class="time-slot">11:00 AM</button>
+            <button class="time-slot">11:30 AM</button>
+            <button class="time-slot disabled">12:00 PM</button>
+            <button class="time-slot">2:00 PM</button>
+            <button class="time-slot">2:30 PM</button>
+            <button class="time-slot">3:00 PM</button>
+          </div>
+        </div>
+
+        <div class="booking-section">
+          <h4>Consultation Type</h4>
+          <div class="consult-types">
+            <label class="consult-option active">
+              <input type="radio" name="consult" checked>
+              <span class="option-icon">📹</span>
+              <span class="option-text">Video Call</span>
+            </label>
+            <label class="consult-option">
+              <input type="radio" name="consult">
+              <span class="option-icon">📞</span>
+              <span class="option-text">Voice Call</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-book">
+          Confirm Booking
+          <span class="btn-sub">₹500 • 30 min session</span>
+        </button>
+
+        <p class="booking-note">
+          🔒 Secure payment • Free cancellation up to 24h before
+        </p>
+      </div>
+
+      <!-- Contact Card -->
+      <div class="contact-card">
+        <h4>Need Help?</h4>
+        <p>Our support team is available 24/7</p>
+        <a href="#" class="support-link">💬 Chat with us</a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Find Doctors</a>
+        <a href="remedies.html">Ayurveda Remedies</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="#">Online Consultation</a>
+        <a href="#">Book Appointment</a>
+        <a href="#">Health Articles</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:contact@ayurvaidya.com">contact@ayurvaidya.com</a>
+        <a href="tel:+911234567890">+91 123 456 7890</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <img src="footer_logo.png" alt="Ayurvaidya Logo" class="footer-logo">
+
+      <p>© 2026 Ayurvaidya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal Popup -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2>Welcome Back</h2>
+      <p class="modal-subtitle">Sign in to your account</p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-full">Sign In</button>
+      </form>
+
+      <p class="modal-footer-text">
+        Don't have an account? <a href="#" id="signupLink">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Login Modal Functionality
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+    const loginForm = document.getElementById('loginForm');
+
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginModal.classList.add('active');
+    });
+
+    closeModal.addEventListener('click', () => {
+      loginModal.classList.remove('active');
+    });
+
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        loginModal.classList.remove('active');
+      }
+    });
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      // TODO: Backend team - implement authentication
+      console.log('Login attempt:', { email, password });
+      alert('Login functionality will be connected to backend. Email: ' + email);
+      loginModal.classList.remove('active');
+    });
+
+    // =====================================================
+    // Booking Functionality
+    // =====================================================
+
+    // Store selected booking details
+    let selectedDate = 'Tomorrow, 4 Jan';
+    let selectedTime = '10:30 AM';
+    let selectedConsultType = 'Video Call';
+
+    // Available time slots for different dates (simulated data)
+    // TODO: Backend team - Fetch real availability from API
+    // GET /api/doctors/{id}/availability?date={date}
+    const availabilityByDate = {
+      'today': {
+        slots: ['11:00 AM', '11:30 AM', '2:00 PM', '3:30 PM'],
+        disabled: ['10:00 AM', '10:30 AM', '12:00 PM', '2:30 PM', '3:00 PM']
+      },
+      'tomorrow': {
+        slots: ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '2:00 PM', '2:30 PM', '3:00 PM'],
+        disabled: ['12:00 PM']
+      },
+      'sun': {
+        slots: ['10:00 AM', '11:00 AM', '11:30 AM'],
+        disabled: ['10:30 AM', '12:00 PM', '2:00 PM', '2:30 PM', '3:00 PM']
+      },
+      'mon': {
+        slots: ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '2:00 PM', '2:30 PM', '3:00 PM'],
+        disabled: []
+      }
+    };
+
+    const allTimeSlots = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '2:00 PM', '2:30 PM', '3:00 PM'];
+
+    // Get time slots container
+    const timeSlotsContainer = document.querySelector('.time-slots');
+
+    // Function to render time slots based on date
+    function renderTimeSlots(dateKey) {
+      const availability = availabilityByDate[dateKey] || availabilityByDate['tomorrow'];
+
+      // Add loading effect
+      timeSlotsContainer.style.opacity = '0.5';
+
+      setTimeout(() => {
+        // Clear existing slots
+        timeSlotsContainer.innerHTML = '';
+
+        // Create new slots
+        allTimeSlots.forEach(time => {
+          const slot = document.createElement('button');
+          slot.className = 'time-slot';
+          slot.textContent = time;
+
+          if (availability.disabled.includes(time)) {
+            slot.classList.add('disabled');
+          }
+
+          // Add click handler
+          slot.addEventListener('click', () => {
+            if (slot.classList.contains('disabled')) return;
+
+            document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
+            slot.classList.add('active');
+            selectedTime = time;
+            updateBookingSummary();
+          });
+
+          timeSlotsContainer.appendChild(slot);
+        });
+
+        // Select first available slot
+        const firstAvailable = timeSlotsContainer.querySelector('.time-slot:not(.disabled)');
+        if (firstAvailable) {
+          firstAvailable.classList.add('active');
+          selectedTime = firstAvailable.textContent;
+          updateBookingSummary();
+        }
+
+        // Remove loading effect
+        timeSlotsContainer.style.opacity = '1';
+      }, 300);
+    }
+
+    // Date Selection
+    const dateBtns = document.querySelectorAll('.date-btn');
+    dateBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        // Remove active from all
+        dateBtns.forEach(b => b.classList.remove('active'));
+        // Add active to clicked
+        btn.classList.add('active');
+        // Store selected date
+        selectedDate = btn.textContent.replace(/\s+/g, ' ').trim();
+
+        // Determine date key based on button index
+        const dateKeys = ['today', 'tomorrow', 'sun', 'mon'];
+        const dateKey = dateKeys[index] || 'tomorrow';
+
+        // Refresh time slots
+        renderTimeSlots(dateKey);
+
+        updateBookingSummary();
+      });
+    });
+
+    // Time Slot Selection (for initial slots)
+    const timeSlots = document.querySelectorAll('.time-slot');
+    timeSlots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        // Skip if disabled
+        if (slot.classList.contains('disabled')) return;
+
+        // Remove active from all
+        timeSlots.forEach(s => s.classList.remove('active'));
+        // Add active to clicked
+        slot.classList.add('active');
+        // Store selected time
+        selectedTime = slot.textContent.trim();
+        updateBookingSummary();
+      });
+    });
+
+    // Consultation Type Selection
+    const consultOptions = document.querySelectorAll('.consult-option');
+    consultOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Remove active from all
+        consultOptions.forEach(o => o.classList.remove('active'));
+        // Add active to clicked
+        option.classList.add('active');
+        // Check the radio
+        const radio = option.querySelector('input[type="radio"]');
+        radio.checked = true;
+        // Store selected type
+        selectedConsultType = option.querySelector('.option-text').textContent.trim();
+        updateBookingSummary();
+      });
+    });
+
+    // Update booking button summary
+    function updateBookingSummary() {
+      const btnSub = document.querySelector('.btn-sub');
+      if (btnSub) {
+        btnSub.textContent = `₹500 • ${selectedTime} • ${selectedConsultType}`;
+      }
+    }
+
+    // Confirm Booking Button
+    const bookBtn = document.querySelector('.btn-book');
+    if (bookBtn) {
+      bookBtn.addEventListener('click', () => {
+        // Prepare Booking Data
+        const urlParams = new URLSearchParams(window.location.search);
+        const docId = urlParams.get('id') || 'ananya';
+
+        const bookingPayload = {
+          doctorId: docId,
+          date: selectedDate,
+          time: selectedTime,
+          type: selectedConsultType
+        };
+
+        // Call Backend API
+        fetch('/api/v1/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bookingPayload)
+        })
+        .then(res => res.json())
+        .then(response => {
+          if (response.success) {
+             const booking = response.data;
+             const confirmation = `
+🎉 Booking Confirmed!
+ID: ${booking.id}
+Status: ${booking.status}
+
+Date: ${booking.date}
+Time: ${booking.time}
+Type: ${booking.type}
+
+We have created a Case File for your consultation.
+Your doctor will review your details shortly.
+             `;
+             alert(confirmation);
+             console.log('Booking success:', booking);
+          } else {
+             alert('Booking failed: ' + response.error);
+          }
+        })
+        .catch(err => {
+           console.error('Booking error:', err);
+           alert('Failed to connect to server.');
+        });
+      });
+    }
+
+    // View All Reviews Button
+    const reviewsBtn = document.querySelector('.btn-secondary');
+    if (reviewsBtn) {
+      reviewsBtn.addEventListener('click', () => {
+        alert('All reviews will be loaded here.\n\n// TODO: Backend team - Fetch all reviews\n// GET /api/doctors/{id}/reviews');
+      });
+    }
+
+    // Support Chat Link
+    const supportLink = document.querySelector('.support-link');
+    if (supportLink) {
+      supportLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Chat support will open here.\n\n// TODO: Integrate chat widget (e.g., Intercom, Crisp, or custom chat)');
+      });
+    }
+
+    // Initialize summary on load
+    updateBookingSummary();
+  </script>
+
+
+  <!-- Floating Chat Widget -->
+  <button class="chat-widget-btn" id="chatWidgetBtn">💬</button>
+
+  <div class="chat-widget-window" id="chatWidgetWindow">
+    <div class="chat-widget-header">
+      <div class="chat-widget-title">
+        <div class="chat-widget-avatar">🤖</div>
+        <div class="chat-widget-info">
+          <h3>Ayurveda Assistant</h3>
+          <p>Online • Ask anything</p>
+        </div>
+      </div>
+      <button class="chat-widget-close" id="chatWidgetClose">×</button>
+    </div>
+
+    <div class="chat-widget-messages" id="widgetMessages">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI health assistant. Tell me about your health concern, and I can recommend specialized
+        doctors or Ayurveda remedies.
+      </div>
+    </div>
+
+    <div class="chat-widget-input">
+      <input type="text" id="widgetInput" placeholder="Type your message...">
+      <button class="chat-widget-send" id="widgetSendBtns">➤</button>
+    </div>
+  </div>
+
+  <script>
+    // Existing Logic...
+
+
+
+    // Existing Chat Widget Logic Removed (Moved to chat.js)
+  </script>
+
+  <script>
+    // =====================================================
+    // Dynamic Doctor Data Loading
+    // =====================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      // Doctor Data
+      // Get ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const docId = urlParams.get('id') || 'ananya';
+
+      // FETCH REAL DOCTOR DATA
+      fetch(`/api/v1/doctors/${docId}`)
+        .then(res => res.json())
+        .then(response => {
+          if (!response.success) {
+            console.error('Doctor not found:', response.error);
+            alert('Doctor not found. Redirecting to directory.');
+            window.location.href = 'doctors.html';
+            return;
+          }
+
+          const doctor = response.data;
+
+          // Update DOM
+          document.getElementById('docBreadcrumbName').textContent = doctor.name;
+          document.getElementById('docInitials').textContent = doctor.initials;
+          document.getElementById('docName').textContent = doctor.name;
+          document.getElementById('docSpecialty').textContent = doctor.specialty;
+          document.getElementById('docQual').textContent = doctor.qualifications; // Backend uses 'qualifications'
+          document.getElementById('docLoc').textContent = doctor.location; // Backend uses 'location'
+          document.getElementById('docRating').textContent = `⭐ ${doctor.rating}`;
+          document.getElementById('docReviews').textContent = `(${doctor.reviews} reviews)`;
+          document.getElementById('docConsults').textContent = `• ${doctor.consultations}+ consultations`;
+          document.getElementById('docExp').textContent = `${doctor.experience}+`;
+          document.getElementById('docPatients').textContent = `${doctor.patients}+`;
+          document.getElementById('docAbout').textContent = doctor.about;
+          document.getElementById('docPrice').textContent = `₹${doctor.price}`;
+
+          // Update summary price calculation if it exists
+          const summaryFee = document.getElementById('summaryFee');
+          if (summaryFee) summaryFee.textContent = `₹${doctor.price}`;
+
+          // Update total price logic
+          const totalDisplay = document.getElementById('totalFee');
+          if (totalDisplay) totalDisplay.textContent = `₹${doctor.price}`;
+        })
+        .catch(err => {
+          console.error('Error loading doctor:', err);
+          // Fallback or error handling
+        });
+    });
+  </script>
+  <script src="chat.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa',
+        autoDisplay: false,
+      }, 'google_translate_element');
+
+      // Inject Custom UI
+      const interval = setInterval(() => {
+        const wrapper = document.getElementById('google_translate_element');
+        if (wrapper && !document.getElementById('custom_lang_btn')) {
+          clearInterval(interval);
+
+          // Create Custom Wrapper (Isolated from Google container)
+          const customWrapper = document.createElement('div');
+          customWrapper.id = 'custom_lang_wrapper';
+          wrapper.parentNode.insertBefore(customWrapper, wrapper.nextSibling);
+
+          // Custom Button
+          const btn = document.createElement('div');
+          btn.id = 'custom_lang_btn';
+          btn.className = 'notranslate';
+          btn.innerHTML = '🌐';
+          customWrapper.appendChild(btn);
+
+          // Custom Menu
+          const menu = document.createElement('div');
+          menu.id = 'custom_lang_menu';
+          menu.className = 'notranslate';
+
+          const languages = [
+            { code: 'en', name: 'English' },
+            { code: 'hi', name: 'Hindi (हिंदी)' },
+            { code: 'bn', name: 'Bengali (বাংলা)' },
+            { code: 'te', name: 'Telugu (తెలుగు)' },
+            { code: 'mr', name: 'Marathi (मराठी)' },
+            { code: 'ta', name: 'Tamil (தமிழ்)' },
+            { code: 'gu', name: 'Gujarati (ગુજરાતી)' },
+            { code: 'kn', name: 'Kannada (ಕನ್ನಡ)' },
+            { code: 'ml', name: 'Malayalam (മലയാളം)' },
+            { code: 'pa', name: 'Punjabi (ਪੰਜਾਬੀ)' }
+          ];
+
+          languages.forEach(lang => {
+            const option = document.createElement('div');
+            option.className = 'lang-option';
+            option.textContent = lang.name;
+            option.onclick = () => {
+              const select = document.querySelector('.goog-te-combo');
+              if (select) {
+                select.value = lang.code;
+                select.dispatchEvent(new Event('change'));
+              }
+              menu.classList.remove('active');
+            };
+            menu.appendChild(option);
+          });
+
+          customWrapper.appendChild(menu);
+
+          // Event Listeners
+          btn.onclick = (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+          };
+
+          document.addEventListener('click', (e) => {
+            if (!customWrapper.contains(e.target)) menu.classList.remove('active');
+          });
+        }
+      }, 500);
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
