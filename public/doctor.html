@@ -239,9 +239,9 @@
 
       <div class="footer-links">
         <h4>Services</h4>
-        <a href="#">Online Consultation</a>
-        <a href="#">Book Appointment</a>
-        <a href="#">Health Articles</a>
+        <a href="doctors.html">Online Consultation</a>
+        <a href="doctors.html">Book Appointment</a>
+        <a href="remedies.html">Health Articles</a>
       </div>
 
       <div class="footer-links">
@@ -485,11 +485,11 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(bookingPayload)
         })
-        .then(res => res.json())
-        .then(response => {
-          if (response.success) {
-             const booking = response.data;
-             const confirmation = `
+          .then(res => res.json())
+          .then(response => {
+            if (response.success) {
+              const booking = response.data;
+              const confirmation = `
 🎉 Booking Confirmed!
 ID: ${booking.id}
 Status: ${booking.status}
@@ -501,16 +501,16 @@ Type: ${booking.type}
 We have created a Case File for your consultation.
 Your doctor will review your details shortly.
              `;
-             alert(confirmation);
-             console.log('Booking success:', booking);
-          } else {
-             alert('Booking failed: ' + response.error);
-          }
-        })
-        .catch(err => {
-           console.error('Booking error:', err);
-           alert('Failed to connect to server.');
-        });
+              alert(confirmation);
+              console.log('Booking success:', booking);
+            } else {
+              alert('Booking failed: ' + response.error);
+            }
+          })
+          .catch(err => {
+            console.error('Booking error:', err);
+            alert('Failed to connect to server.');
+          });
       });
     }
 
