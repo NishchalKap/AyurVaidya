@@ -25,6 +25,7 @@ import caseRoutes from './routes/cases.js';
 import aiRoutes from './routes/ai.js';
 import marketingRoutes from './routes/marketing.js';
 import publicChatRoutes from './routes/publicChat.js';
+import configRoutes from './routes/config.js';
 
 // Middleware
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';

@@ -73,6 +73,12 @@ CREATE INDEX IF NOT EXISTS idx_ai_summaries_case_id ON ai_summaries(case_id);
 -- ALTER TABLE cases ENABLE ROW LEVEL SECURITY;
 -- ALTER TABLE ai_summaries ENABLE ROW LEVEL SECURITY;
 
+-- CREATE POLICY "Users can view own data" ON patients
+--   FOR SELECT USING (auth.uid()::text = id);
+
+-- CREATE POLICY "Users can create cases" ON cases
+--   FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
 -- ============================================
 -- UPDATED_AT TRIGGER
 -- ============================================
