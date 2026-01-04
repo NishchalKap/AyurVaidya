@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Find Doctors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-link notranslate">
+        <img src="logo.png" alt="Ayurvaidya Logo" class="logo-img">
+      </a>
+      <div>
+        <a href="doctors.html">Consultation</a>
+        <a href="remedies.html">Ayurveda</a>
+        <a href="#" class="btn outline" id="loginBtn">Login</a>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="doctors-hero">
+    <div class="container">
+      <h1>Find Your Perfect Doctor</h1>
+      <p>Connect with verified specialists for personalized consultations</p>
+
+      <!-- Search & Filter Bar -->
+      <div class="search-filters">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search by name, specialty, or condition...">
+        </div>
+        <div class="filter-tags">
+          <button class="filter-tag active">All</button>
+          <button class="filter-tag">Cardiology</button>
+          <button class="filter-tag">Dermatology</button>
+          <button class="filter-tag">General</button>
+          <button class="filter-tag">Ayurveda</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Grid -->
+  <section class="container">
+    <div class="doctors-header">
+      <h2>Available Specialists</h2>
+      <span class="doctor-count">5 doctors found</span>
+    </div>
+
+    <div class="doctors-grid">
+
+      <!-- Doctor Card 1 -->
+      <div class="doctor-card-new" data-specialty="cardiology">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar">
+            <div class="avatar-placeholder">AS</div>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Ananya Sharma</h3>
+            <span class="specialty-badge">Cardiologist</span>
+          </div>
+        </div>
+
+        <div class="doctor-card-body">
+          <div class="doctor-stats">
+            <div class="stat">
+              <span class="stat-value">12+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.9</span>
+              <span class="stat-label">Rating ⭐</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">500+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+          </div>
+
+          <div class="doctor-details">
+            <p class="qualification">MBBS, MD (Cardiology) - AIIMS Delhi</p>
+            <p class="languages">🗣️ Hindi, English</p>
+          </div>
+        </div>
+
+        <div class="doctor-card-footer">
+          <div class="price-tag">
+            <span class="price">₹500</span>
+            <span class="price-label">per session</span>
+          </div>
+          <a href="doctor.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Doctor Card 2 -->
+      <div class="doctor-card-new" data-specialty="dermatology">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar">
+            <div class="avatar-placeholder blue">RM</div>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Rohan Mehta</h3>
+            <span class="specialty-badge blue">Dermatologist</span>
+          </div>
+        </div>
+
+        <div class="doctor-card-body">
+          <div class="doctor-stats">
+            <div class="stat">
+              <span class="stat-value">8+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.8</span>
+              <span class="stat-label">Rating ⭐</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">350+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+          </div>
+
+          <div class="doctor-details">
+            <p class="qualification">MBBS, MD (Dermatology) - KMC Mumbai</p>
+            <p class="languages">🗣️ Hindi, English, Marathi</p>
+          </div>
+        </div>
+
+        <div class="doctor-card-footer">
+          <div class="price-tag">
+            <span class="price">₹400</span>
+            <span class="price-label">per session</span>
+          </div>
+          <a href="doctor.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Doctor Card 3 -->
+      <div class="doctor-card-new" data-specialty="general">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar">
+            <div class="avatar-placeholder purple">KI</div>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Kavita Iyer</h3>
+            <span class="specialty-badge purple">General Physician</span>
+          </div>
+        </div>
+
+        <div class="doctor-card-body">
+          <div class="doctor-stats">
+            <div class="stat">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.7</span>
+              <span class="stat-label">Rating ⭐</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">800+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+          </div>
+
+          <div class="doctor-details">
+            <p class="qualification">MBBS, DNB (Family Medicine)</p>
+            <p class="languages">🗣️ Hindi, English, Tamil</p>
+          </div>
+        </div>
+
+        <div class="doctor-card-footer">
+          <div class="price-tag">
+            <span class="price">₹300</span>
+            <span class="price-label">per session</span>
+          </div>
+          <a href="doctor.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Doctor Card 4 - Ayurveda -->
+      <div class="doctor-card-new" data-specialty="ayurveda">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar">
+            <div class="avatar-placeholder ayurveda">VN</div>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="doctor-info">
+            <h3>Vaidya Narayan Joshi</h3>
+            <span class="specialty-badge ayurveda">Ayurveda Specialist</span>
+          </div>
+        </div>
+
+        <div class="doctor-card-body">
+          <div class="doctor-stats">
+            <div class="stat">
+              <span class="stat-value">25+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.9</span>
+              <span class="stat-label">Rating ⭐</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">2000+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+          </div>
+
+          <div class="doctor-details">
+            <p class="qualification">BAMS, MD (Ayurveda) - BHU Varanasi</p>
+            <p class="languages">🗣️ Hindi, English, Sanskrit</p>
+          </div>
+        </div>
+
+        <div class="doctor-card-footer">
+          <div class="price-tag">
+            <span class="price">₹350</span>
+            <span class="price-label">per session</span>
+          </div>
+          <a href="doctor.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Doctor Card 5 - Ayurveda -->
+      <div class="doctor-card-new" data-specialty="ayurveda">
+        <div class="doctor-card-header">
+          <div class="doctor-avatar">
+            <div class="avatar-placeholder ayurveda">PS</div>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Priya Shastri</h3>
+            <span class="specialty-badge ayurveda">Panchakarma Expert</span>
+          </div>
+        </div>
+
+        <div class="doctor-card-body">
+          <div class="doctor-stats">
+            <div class="stat">
+              <span class="stat-value">15+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.8</span>
+              <span class="stat-label">Rating ⭐</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">1200+</span>
+              <span class="stat-label">Patients</span>
+            </div>
+          </div>
+
+          <div class="doctor-details">
+            <p class="qualification">BAMS, Panchakarma Specialist - Kerala Ayurveda</p>
+            <p class="languages">🗣️ Hindi, English, Malayalam</p>
+          </div>
+        </div>
+
+        <div class="doctor-card-footer">
+          <div class="price-tag">
+            <span class="price">₹300</span>
+            <span class="price-label">per session</span>
+          </div>
+          <a href="doctor.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Find Doctors</a>
+        <a href="remedies.html">Ayurveda Remedies</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="#">Online Consultation</a>
+        <a href="#">Book Appointment</a>
+        <a href="#">Health Articles</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:contact@ayurvaidya.com">contact@ayurvaidya.com</a>
+        <a href="tel:+911234567890">+91 123 456 7890</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <img src="footer_logo.png" alt="Ayurvaidya Logo" class="footer-logo">
+
+      <p>© 2026 Ayurvaidya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal Popup -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2>Welcome Back</h2>
+      <p class="modal-subtitle">Sign in to your account</p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-full">Sign In</button>
+      </form>
+
+      <p class="modal-footer-text">
+        Don't have an account? <a href="#" id="signupLink">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+
+  <script>
+    // =====================================================
+    // Filter Functionality
+    // =====================================================
+
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const doctorCards = document.querySelectorAll('.doctor-card-new');
+    const doctorCountEl = document.querySelector('.doctor-count');
+    const searchInput = document.querySelector('.search-box input');
+
+    // Filter by specialty
+    filterTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        // Update active state
+        filterTags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+
+        const filter = tag.textContent.toLowerCase().trim();
+        let visibleCount = 0;
+
+        doctorCards.forEach(card => {
+          const specialty = card.dataset.specialty;
+
+          // Check if should show
+          const shouldShow = filter === 'all' || specialty === filter;
+
+          if (shouldShow) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.opacity = '1';
+            }, 50);
+            visibleCount++;
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 200);
+          }
+        });
+
+        // Update count
+        setTimeout(() => {
+          doctorCountEl.textContent = `${visibleCount} doctor${visibleCount !== 1 ? 's' : ''} found`;
+        }, 250);
+      });
+    });
+
+    // Search functionality
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        // Reset filter tags
+        filterTags.forEach(t => t.classList.remove('active'));
+        filterTags[0].classList.add('active'); // Set 'All' as active
+
+        doctorCards.forEach(card => {
+          const doctorName = card.querySelector('h3').textContent.toLowerCase();
+          const specialty = card.querySelector('.specialty-badge').textContent.toLowerCase();
+          const qualification = card.querySelector('.qualification').textContent.toLowerCase();
+
+          const matches = doctorName.includes(searchTerm) ||
+            specialty.includes(searchTerm) ||
+            qualification.includes(searchTerm);
+
+          if (matches) {
+            card.style.display = '';
+            card.style.opacity = '1';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        doctorCountEl.textContent = `${visibleCount} doctor${visibleCount !== 1 ? 's' : ''} found`;
+      });
+    }
+  </script>
+
+
+  <!-- Floating Chat Widget -->
+  <button class="chat-widget-btn" id="chatWidgetBtn">💬</button>
+
+  <div class="chat-widget-window" id="chatWidgetWindow">
+    <div class="chat-widget-header">
+      <div class="chat-widget-title">
+        <div class="chat-widget-avatar">🤖</div>
+        <div class="chat-widget-info">
+          <h3>Ayurveda Assistant</h3>
+          <p>Online • Ask anything</p>
+        </div>
+      </div>
+      <button class="chat-widget-close" id="chatWidgetClose">×</button>
+    </div>
+
+    <div class="chat-widget-messages" id="widgetMessages">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI health assistant. Tell me about your health concern, and I can recommend specialized
+        doctors or Ayurveda remedies.
+      </div>
+    </div>
+
+    <div class="chat-widget-input">
+      <input type="text" id="widgetInput" placeholder="Type your message...">
+      <button class="chat-widget-send" id="widgetSendBtns">➤</button>
+    </div>
+  </div>
+
+  <script>
+    // Existing Logic...
+
+
+    // Existing Chat Widget Logic Removed (Moved to chat.js)
+  </script>
+  <script src="chat.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa',
+        autoDisplay: false,
+      }, 'google_translate_element');
+
+      // Inject Custom UI
+      const interval = setInterval(() => {
+        const wrapper = document.getElementById('google_translate_element');
+        if (wrapper && !document.getElementById('custom_lang_btn')) {
+          clearInterval(interval);
+
+          // Create Custom Wrapper (Isolated from Google container)
+          const customWrapper = document.createElement('div');
+          customWrapper.id = 'custom_lang_wrapper';
+          wrapper.parentNode.insertBefore(customWrapper, wrapper.nextSibling);
+
+          // Custom Button
+          const btn = document.createElement('div');
+          btn.id = 'custom_lang_btn';
+          btn.className = 'notranslate';
+          btn.innerHTML = '🌐';
+          customWrapper.appendChild(btn);
+
+          // Custom Menu
+          const menu = document.createElement('div');
+          menu.id = 'custom_lang_menu';
+          menu.className = 'notranslate';
+
+          const languages = [
+            { code: 'en', name: 'English' },
+            { code: 'hi', name: 'Hindi (हिंदी)' },
+            { code: 'bn', name: 'Bengali (বাংলা)' },
+            { code: 'te', name: 'Telugu (తెలుగు)' },
+            { code: 'mr', name: 'Marathi (मराठी)' },
+            { code: 'ta', name: 'Tamil (தமிழ்)' },
+            { code: 'gu', name: 'Gujarati (ગુજરાતી)' },
+            { code: 'kn', name: 'Kannada (ಕನ್ನಡ)' },
+            { code: 'ml', name: 'Malayalam (മലയാളം)' },
+            { code: 'pa', name: 'Punjabi (ਪੰਜਾਬੀ)' }
+          ];
+
+          languages.forEach(lang => {
+            const option = document.createElement('div');
+            option.className = 'lang-option';
+            option.textContent = lang.name;
+            option.onclick = () => {
+              const select = document.querySelector('.goog-te-combo');
+              if (select) {
+                select.value = lang.code;
+                select.dispatchEvent(new Event('change'));
+              }
+              menu.classList.remove('active');
+            };
+            menu.appendChild(option);
+          });
+
+          customWrapper.appendChild(menu);
+
+          // Event Listeners
+          btn.onclick = (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+          };
+
+          document.addEventListener('click', (e) => {
+            if (!customWrapper.contains(e.target)) menu.classList.remove('active');
+          });
+        }
+      }, 500);
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+</html>

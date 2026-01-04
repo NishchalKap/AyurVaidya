@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ayurveda Remedies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-link notranslate">
+        <img src="logo.png" alt="Ayurvaidya Logo" class="logo-img">
+      </a>
+      <div>
+        <a href="doctors.html">Consultation</a>
+        <a href="remedies.html">Ayurveda</a>
+        <a href="#" class="btn outline" id="loginBtn">Login</a>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="remedies-hero">
+    <div class="container">
+      <h1>🌿 Ayurveda Remedies</h1>
+      <p>Discover traditional healing wisdom backed by centuries of practice</p>
+
+      <!-- Dosha Filter Tags -->
+      <div class="dosha-filters">
+        <button class="dosha-tag active" data-dosha="all">All Remedies</button>
+        <button class="dosha-tag vata" data-dosha="vata">Vata</button>
+        <button class="dosha-tag pitta" data-dosha="pitta">Pitta</button>
+        <button class="dosha-tag kapha" data-dosha="kapha">Kapha</button>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn" onclick="document.getElementById('chatWidgetBtn').click()">💬 Ask AI for Personal
+          Advice</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remedies Grid -->
+  <section class="container">
+    <div class="remedies-header">
+      <h2>Popular Remedies</h2>
+      <span class="remedy-count">6 remedies found</span>
+    </div>
+
+    <div class="remedies-grid">
+
+      <!-- Remedy Card 1 -->
+      <div class="remedy-card" data-dosha="vata pitta">
+        <div class="remedy-icon">🌿</div>
+        <div class="remedy-content">
+          <h3>Triphala</h3>
+          <p class="remedy-desc">A powerful blend of three fruits that promotes digestive health, detoxification, and
+            rejuvenation.</p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Digestive Health</span>
+            <span class="benefit">✓ Detoxification</span>
+            <span class="benefit">✓ Immunity Boost</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge vata">Vata</span>
+            <span class="dosha-badge pitta">Pitta</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Powder / Tablet</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Before bed</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Remedy Card 2 -->
+      <div class="remedy-card" data-dosha="vata kapha">
+        <div class="remedy-icon">🪴</div>
+        <div class="remedy-content">
+          <h3>Ashwagandha</h3>
+          <p class="remedy-desc">An adaptogenic herb that reduces stress, improves sleep quality, and enhances overall
+            vitality.</p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Stress Relief</span>
+            <span class="benefit">✓ Better Sleep</span>
+            <span class="benefit">✓ Energy Boost</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge vata">Vata</span>
+            <span class="dosha-badge kapha">Kapha</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Powder / Capsule</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Morning / Night</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Remedy Card 3 -->
+      <div class="remedy-card" data-dosha="pitta">
+        <div class="remedy-icon">🍃</div>
+        <div class="remedy-content">
+          <h3>Brahmi</h3>
+          <p class="remedy-desc">Known as the "herb of grace," Brahmi enhances memory, focus, and cognitive function.
+          </p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Memory Enhancement</span>
+            <span class="benefit">✓ Mental Clarity</span>
+            <span class="benefit">✓ Anxiety Relief</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge pitta">Pitta</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Oil / Powder</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Morning</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Remedy Card 4 -->
+      <div class="remedy-card" data-dosha="kapha pitta">
+        <div class="remedy-icon">🫚</div>
+        <div class="remedy-content">
+          <h3>Turmeric (Haldi)</h3>
+          <p class="remedy-desc">The golden spice with powerful anti-inflammatory and antioxidant properties for overall
+            wellness.</p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Anti-inflammatory</span>
+            <span class="benefit">✓ Skin Health</span>
+            <span class="benefit">✓ Joint Support</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge kapha">Kapha</span>
+            <span class="dosha-badge pitta">Pitta</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Powder / Milk</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Night (with milk)</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Remedy Card 5 -->
+      <div class="remedy-card" data-dosha="vata">
+        <div class="remedy-icon">🌸</div>
+        <div class="remedy-content">
+          <h3>Shatavari</h3>
+          <p class="remedy-desc">The "queen of herbs" that supports women's health, hormonal balance, and reproductive
+            wellness.</p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Hormonal Balance</span>
+            <span class="benefit">✓ Women's Health</span>
+            <span class="benefit">✓ Vitality</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge vata">Vata</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Powder / Tablet</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Twice daily</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Remedy Card 6 -->
+      <div class="remedy-card" data-dosha="kapha">
+        <div class="remedy-icon">🍯</div>
+        <div class="remedy-content">
+          <h3>Chyawanprash</h3>
+          <p class="remedy-desc">An ancient Ayurvedic jam that boosts immunity, energy, and overall health with 40+
+            herbs.</p>
+
+          <div class="remedy-benefits">
+            <span class="benefit">✓ Immunity Boost</span>
+            <span class="benefit">✓ Respiratory Health</span>
+            <span class="benefit">✓ Anti-aging</span>
+          </div>
+
+          <div class="dosha-badges">
+            <span class="dosha-badge kapha">Kapha</span>
+          </div>
+
+          <div class="remedy-info">
+            <div class="info-item">
+              <span class="info-label">Form</span>
+              <span class="info-value">Jam / Paste</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Best Time</span>
+              <span class="info-value">Morning</span>
+            </div>
+          </div>
+
+          <button class="btn-remedy">Learn More</button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="btn-remedy">Learn More</button>
+    </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================
+       AI AYURVEDA CHAT SECTION
+       (To be connected to OpenAI API)
+       ===================================================== -->
+
+  <!-- =====================================================
+       AI AYURVEDA CHAT SECTION REMOVED
+       Replaced with Global Chat Widget (Bottom Right)
+       ===================================================== -->
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Find Doctors</a>
+        <a href="remedies.html">Ayurveda Remedies</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="#">Online Consultation</a>
+        <a href="#">Book Appointment</a>
+        <a href="#">Health Articles</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="mailto:contact@ayurvaidya.com">contact@ayurvaidya.com</a>
+        <a href="tel:+911234567890">+91 123 456 7890</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <img src="footer_logo.png" alt="Ayurvaidya Logo" class="footer-logo">
+
+      <p>© 2026 Ayurvaidya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal Popup -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2>Welcome Back</h2>
+      <p class="modal-subtitle">Sign in to your account</p>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-full">Sign In</button>
+      </form>
+
+      <p class="modal-footer-text">
+        Don't have an account? <a href="#" id="signupLink">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  // Login logic moved to auth.js
+  </script>
+
+  // =====================================================
+  // Dosha Filter Functionality
+  // =====================================================
+
+  const doshaTags = document.querySelectorAll('.dosha-tag');
+  const remedyCards = document.querySelectorAll('.remedy-card');
+  const remedyCountEl = document.querySelector('.remedy-count');
+
+  doshaTags.forEach(tag => {
+  tag.addEventListener('click', () => {
+  // Update active state
+  doshaTags.forEach(t => t.classList.remove('active'));
+  tag.classList.add('active');
+
+  const filter = tag.dataset.dosha;
+  let visibleCount = 0;
+
+  remedyCards.forEach(card => {
+  const cardDoshas = card.dataset.dosha;
+
+  // Check if should show
+  const shouldShow = filter === 'all' || cardDoshas.includes(filter);
+
+  if (shouldShow) {
+  card.style.display = '';
+  card.style.opacity = '0';
+  setTimeout(() => {
+  card.style.opacity = '1';
+  }, 50);
+  visibleCount++;
+  } else {
+  card.style.opacity = '0';
+  setTimeout(() => {
+  card.style.display = 'none';
+  }, 200);
+  }
+  });
+
+  // Update count
+  setTimeout(() => {
+  remedyCountEl.textContent = `${visibleCount} remed${visibleCount !== 1 ? 'ies' : 'y'} found`;
+  }, 250);
+  });
+  });
+
+  // Learn More Button Handlers (Simplified)
+  const remedyBtns = document.querySelectorAll('.btn-remedy');
+  remedyBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+  const card = btn.closest('.remedy-card');
+  const remedyName = card.querySelector('h3').textContent;
+  // Clean info alert - no TODOs
+  alert(`${remedyName} is available in our store. \n\nLog in or consult a doctor for dosage instructions.`);
+  });
+  });
+  </script>
+
+
+  <!-- Floating Chat Widget -->
+  <button class="chat-widget-btn" id="chatWidgetBtn">💬</button>
+
+  <div class="chat-widget-window" id="chatWidgetWindow">
+    <div class="chat-widget-header">
+      <div class="chat-widget-title">
+        <div class="chat-widget-avatar">🤖</div>
+        <div class="chat-widget-info">
+          <h3>Ayurveda Assistant</h3>
+          <p>Online • Ask anything</p>
+        </div>
+      </div>
+      <button class="chat-widget-close" id="chatWidgetClose">×</button>
+    </div>
+
+    <div class="chat-widget-messages" id="widgetMessages">
+      <div class="chat-msg bot">
+        Hello! 👋 I'm your AI health assistant. Tell me about your health concern, and I can recommend specialized
+        doctors or Ayurveda remedies.
+      </div>
+    </div>
+
+    <div class="chat-widget-input">
+      <input type="text" id="widgetInput" placeholder="Type your message...">
+      <button class="chat-widget-send" id="widgetSendBtns">➤</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+  <script src="auth.js"></script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa',
+        autoDisplay: false,
+      }, 'google_translate_element');
+
+      // Inject Custom UI
+      const interval = setInterval(() => {
+        const wrapper = document.getElementById('google_translate_element');
+        if (wrapper && !document.getElementById('custom_lang_btn')) {
+          clearInterval(interval);
+
+          // Create Custom Wrapper (Isolated from Google container)
+          const customWrapper = document.createElement('div');
+          customWrapper.id = 'custom_lang_wrapper';
+          wrapper.parentNode.insertBefore(customWrapper, wrapper.nextSibling);
+
+          // Custom Button
+          const btn = document.createElement('div');
+          btn.id = 'custom_lang_btn';
+          btn.className = 'notranslate';
+          btn.innerHTML = '🌐';
+          customWrapper.appendChild(btn);
+
+          // Custom Menu
+          const menu = document.createElement('div');
+          menu.id = 'custom_lang_menu';
+          menu.className = 'notranslate';
+
+          const languages = [
+            { code: 'en', name: 'English' },
+            { code: 'hi', name: 'Hindi (हिंदी)' },
+            { code: 'bn', name: 'Bengali (বাংলা)' },
+            { code: 'te', name: 'Telugu (తెలుగు)' },
+            { code: 'mr', name: 'Marathi (मराठी)' },
+            { code: 'ta', name: 'Tamil (தமிழ்)' },
+            { code: 'gu', name: 'Gujarati (ગુજરાતી)' },
+            { code: 'kn', name: 'Kannada (ಕನ್ನಡ)' },
+            { code: 'ml', name: 'Malayalam (മലയാളം)' },
+            { code: 'pa', name: 'Punjabi (ਪੰਜਾਬੀ)' }
+          ];
+
+          languages.forEach(lang => {
+            const option = document.createElement('div');
+            option.className = 'lang-option';
+            option.textContent = lang.name;
+            option.onclick = () => {
+              const select = document.querySelector('.goog-te-combo');
+              if (select) {
+                select.value = lang.code;
+                select.dispatchEvent(new Event('change'));
+              }
+              menu.classList.remove('active');
+            };
+            menu.appendChild(option);
+          });
+
+          customWrapper.appendChild(menu);
+
+          // Event Listeners
+          btn.onclick = (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+          };
+
+          document.addEventListener('click', (e) => {
+            if (!customWrapper.contains(e.target)) menu.classList.remove('active');
+          });
+        }
+      }, 500);
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
