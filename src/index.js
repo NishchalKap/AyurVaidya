@@ -67,7 +67,7 @@ import path from 'path';
 
 // Serve Static Frontend Files
 // Using relative path for portability
-const FRONTEND_PATH = path.join(process.cwd(), 'frontend');
+const FRONTEND_PATH = path.join(process.cwd(), 'public');
 app.use(express.static(FRONTEND_PATH));
 
 // Parse JSON bodies
