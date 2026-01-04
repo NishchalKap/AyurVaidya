@@ -1,5 +1,5 @@
 # 🏥 Ayurvaidya
-<img src="frontend/logo.png" alt="Ayurvaidya Logo" width="120" />
+<img src="public/logo.png" alt="Ayurvaidya Logo" width="120" />
 
 ### AI-assisted Clinical Decision Support for Affordable Healthcare in Bharat
 
