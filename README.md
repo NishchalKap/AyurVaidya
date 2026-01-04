@@ -1,4 +1,6 @@
 # 🏥 Ayurvaidya
+<img src="frontend/logo.png" alt="Ayurvaidya Logo" width="120" />
+
 ### AI-assisted Clinical Decision Support for Affordable Healthcare in Bharat
 
 > **Built for OpenAI Academy × NxtWave Buildathon**
@@ -152,7 +154,9 @@ This is not just a "wrapper" around ChatGPT.
 
 ## 👥 Team
 
-*   **Nishchal K.** - Full Stack Developer & Systems Architect
+*   **Nishchal Kapadia**
+*   **Bhavya Jain**
+*   **Pragyan Dudi**
 
 ---
 
