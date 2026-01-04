@@ -67,7 +67,7 @@ import path from 'path';
 
 // Serve Static Frontend Files
 // Using relative path for portability
-const FRONTEND_PATH = path.join(process.cwd(), 'frontend');
+const FRONTEND_PATH = path.join(process.cwd(), 'public');
 app.use(express.static(FRONTEND_PATH));
 
 // Parse JSON bodies
@@ -135,50 +135,49 @@ app.use(errorHandler);
 // SERVER START
 // ============================================
 
-const server = app.listen(PORT, () => {
-    console.log('\n');
-    console.log('╔════════════════════════════════════════════════════════════╗');
-    console.log('║                                                            ║');
-    console.log('║   🏥  AYURVAIDYA - Clinical Decision Support System        ║');
-    console.log('║                                                            ║');
-    console.log('║   Stage 1: Foundation Backend                              ║');
-    console.log('║   "Guidance, Not Diagnosis"                                ║');
-    console.log('║                                                            ║');
-    console.log('╚════════════════════════════════════════════════════════════╝');
-    console.log('\n');
-    console.log(`   🚀 Server running at: http://localhost:${PORT}`);
-    console.log(`   📡 API Base URL: http://localhost:${PORT}/api/${API_VERSION}`);
-    console.log('   🔧 Mode: AI Stubs (Stage 1)');
-    console.log('\n');
-    console.log('   Endpoints:');
-    console.log(`   • Patients:  http://localhost:${PORT}/api/${API_VERSION}/patients`);
-    console.log(`   • Cases:     http://localhost:${PORT}/api/${API_VERSION}/cases`);
-    console.log(`   • AI:        http://localhost:${PORT}/api/${API_VERSION}/ai`);
-    console.log(`   • Health:    http://localhost:${PORT}/health`);
-    console.log('\n');
-});
-
-// ============================================
-// GRACEFUL SHUTDOWN
-// ============================================
-
-function shutdown() {
-    console.log('\n🛑 Shutting down server...');
-
-    server.close(() => {
-        closeDatabase();
-        console.log('👋 Server closed. Goodbye!\n');
-        process.exit(0);
+// Only start server if run directly (not imported as module or in Vercel)
+// In Vercel, the environment variable VERCEL is set.
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+    const server = app.listen(PORT, () => {
+        console.log('\n');
+        console.log('╔════════════════════════════════════════════════════════════╗');
+        console.log('║                                                            ║');
+        console.log('║   🏥  AYURVAIDYA - Clinical Decision Support System        ║');
+        console.log('║                                                            ║');
+        console.log('║   Stage 1: Foundation Backend                              ║');
+        console.log('║   "Guidance, Not Diagnosis"                                ║');
+        console.log('║                                                            ║');
+        console.log('╚════════════════════════════════════════════════════════════╝');
+        console.log('\n');
+        console.log(`   🚀 Server running at: http://localhost:${PORT}`);
+        console.log(`   📡 API Base URL: http://localhost:${PORT}/api/${API_VERSION}`);
+        console.log('   🔧 Mode: AI Stubs (Stage 1)');
+        console.log('\n');
+        console.log('   Endpoints:');
+        console.log(`   • Patients:  http://localhost:${PORT}/api/${API_VERSION}/patients`);
+        console.log(`   • Cases:     http://localhost:${PORT}/api/${API_VERSION}/cases`);
+        console.log(`   • AI:        http://localhost:${PORT}/api/${API_VERSION}/ai`);
+        console.log(`   • Health:    http://localhost:${PORT}/health`);
+        console.log('\n');
     });
 
-    // Force close after 10 seconds
-    setTimeout(() => {
-        console.error('⚠️ Forcing shutdown...');
-        process.exit(1);
-    }, 10000);
+    // ============================================
+    // GRACEFUL SHUTDOWN
+    // ============================================
+    function shutdown() {
+        console.log('\n🛑 Shutting down server...');
+        server.close(() => {
+            closeDatabase();
+            console.log('👋 Server closed. Goodbye!\n');
+            process.exit(0);
+        });
+        setTimeout(() => {
+            console.error('⚠️ Forcing shutdown...');
+            process.exit(1);
+        }, 10000);
+    }
+    process.on('SIGTERM', shutdown);
+    process.on('SIGINT', shutdown);
 }
-
-process.on('SIGTERM', shutdown);
-process.on('SIGINT', shutdown);
 
 export default app;

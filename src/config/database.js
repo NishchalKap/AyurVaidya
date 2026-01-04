@@ -43,6 +43,12 @@ function loadDatabase() {
  * Save database to file
  */
 function saveDatabase() {
+    // Vercel is read-only file system (ephemeral)
+    if (process.env.VERCEL) {
+        // console.log('ℹ️  Skipping filesystem write in Vercel environment');
+        return;
+    }
+
     try {
         writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
     } catch (error) {
